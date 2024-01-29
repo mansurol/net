@@ -28,14 +28,14 @@ const BottomTab = () => {
               iconName = focused ? "log-in" : "log-in-outline";
             }
 
-            return <Icon name={iconName} size={40} color={color} />;
+            return <Icon name={iconName} size={34} color={color} />;
           },
           tabBarLabelStyle: {
             fontSize: 17,
             paddingBottom: 25,
           },
           tabBarStyle: {
-            height: 115, // Set the height of the tab bar
+            height: 90, // Set the height of the tab bar
             width: "100%", // Set the width of the tab bar
             alignSelf: "center", // Center the tab bar horizontally
           },
@@ -54,14 +54,6 @@ const BottomTab = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  //   bottomGrayArea: {
-  //     bottom: 0,
-  //     left: 0,
-  //     right: 0,
-  //     height: "10%",
-  //     backgroundColor: "#fff",
-  //   },
-});
+const styles = StyleSheet.create({});
 
 export default BottomTab;
