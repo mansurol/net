@@ -32,23 +32,12 @@ const PayBill = () => {
     };
   }, []);
 
-  const getMarginTop = () => {
-    if (Platform.OS === "android") {
-      return keyboardShown ? 35 : 0;
-    } else if (Platform.OS === "ios") {
-      return keyboardShown ? 20 : 50;
-    }
-  };
-
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
       style={styles.container}
     >
-      <WebView
-        source={{ uri: loginUrl }}
-        style={[styles.webView, { marginTop: getMarginTop() }]}
-      />
+      <WebView source={{ uri: loginUrl }} style={styles.webView} />
       <View style={styles.bottomOverlay} />
     </KeyboardAvoidingView>
   );
