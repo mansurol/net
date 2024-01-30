@@ -34,7 +34,7 @@ const PayBill = () => {
 
   const getMarginTop = () => {
     if (Platform.OS === "android") {
-      return keyboardShown ? 35 : 225;
+      return keyboardShown ? 35 : 0;
     } else if (Platform.OS === "ios") {
       return keyboardShown ? 20 : 50;
     }
@@ -49,6 +49,7 @@ const PayBill = () => {
         source={{ uri: loginUrl }}
         style={[styles.webView, { marginTop: getMarginTop() }]}
       />
+      <View style={styles.bottomOverlay} />
     </KeyboardAvoidingView>
   );
 };
@@ -61,6 +62,14 @@ const styles = StyleSheet.create({
   webView: {
     flex: 1,
     backgroundColor: "#263237",
+  },
+  bottomOverlay: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "7%",
+    backgroundColor: "#fff",
   },
 });
 

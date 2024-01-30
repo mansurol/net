@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { WebView } from "react-native-webview";
 
-const LoginScreen = () => {
+const HomeScreen = () => {
   const loginUrl = "https://care.netwalabd.com/";
   const [keyboardShown, setKeyboardShown] = useState(false);
 
@@ -34,7 +34,7 @@ const LoginScreen = () => {
 
   const getMarginTop = () => {
     if (Platform.OS === "android") {
-      return keyboardShown ? 20 : 155;
+      return keyboardShown ? 0 : 0;
     } else if (Platform.OS === "ios") {
       return keyboardShown ? 20 : 50;
     }
@@ -49,6 +49,7 @@ const LoginScreen = () => {
         source={{ uri: loginUrl }}
         style={[styles.webView, { marginTop: getMarginTop() }]}
       />
+      <View style={styles.bottomOverlay} />
     </KeyboardAvoidingView>
   );
 };
@@ -62,6 +63,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#263237",
   },
+  bottomOverlay: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "7%",
+    backgroundColor: "#fff",
+  },
 });
 
-export default LoginScreen;
+export default HomeScreen;

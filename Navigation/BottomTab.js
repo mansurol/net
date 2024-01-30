@@ -35,9 +35,9 @@ const BottomTab = () => {
             paddingBottom: 25,
           },
           tabBarStyle: {
-            height: 90, // Set the height of the tab bar
-            width: "100%", // Set the width of the tab bar
-            alignSelf: "center", // Center the tab bar horizontally
+            height: 90,
+            width: "100%",
+            alignSelf: "center",
           },
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
@@ -48,7 +48,6 @@ const BottomTab = () => {
         <Tab.Screen name={Routes.LoginScreen} component={LoginScreen} />
       </Tab.Navigator>
 
-      {/* Bottom Gray Area */}
       <View style={styles.bottomGrayArea} />
     </View>
   );
